@@ -67,10 +67,9 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "userId", value: "userId" },
-                    { text: "userName", value: "userName" },
-                    { text: "rankId", value: "rankId" },
+                    { text: "user", value: "user" },
                     { text: "departmentId", value: "departmentId" },
+                    { text: "rankId", value: "rankId" },
                 ],
             employee : [],
             newValue: {},
@@ -88,10 +87,9 @@
             this.values = temp.data._embedded.employees;
 
             this.newValue = {
-                'userId': '',
-                'userName': '',
-                'rankId': {},
+                'user': {},
                 'departmentId': {},
+                'rankId': {},
             }
         },
         methods: {

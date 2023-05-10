@@ -17,10 +17,9 @@
         </v-card-title >
 
         <v-card-text>
-            <String label="UserId" v-model="value.userId" :editMode="editMode"/>
-            <String label="UserName" v-model="value.userName" :editMode="editMode"/>
-            <RankId offline label="RankId" v-model="value.rankId" :editMode="editMode" @change="change"/>
+            <User offline label="User" v-model="value.user" :editMode="editMode" @change="change"/>
             <DepartmentId offline label="DepartmentId" v-model="value.departmentId" :editMode="editMode" @change="change"/>
+            <RankId offline label="RankId" v-model="value.rankId" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>
@@ -78,7 +77,6 @@
 
 <script>
 import EmployeeBase from '../components/EmployeeBase.vue'
-import RankBase from '../components/RankBase.vue'
 import DepartmentBase from '../components/DepartmentBase.vue'
 
 const axios = require('axios').default;
@@ -88,11 +86,13 @@ import RSocketWebSocketClient from 'rsocket-websocket-client';
 import { IdentitySerializer, JsonSerializer } from "rsocket-core/build";
 
 
+import User from './vo/User.vue';
 
 export default {
     name: 'Employee',
     mixins:[EmployeeBase],
     components:{
+        User,
     },
     props: {
         value: [Object, String, Number, Boolean, Array],
@@ -183,17 +183,12 @@ export default {
         async init() {
             var me = this;
             let lists = await me.search();
-            let RankClass = me.$Vue.extend(RankBase);
-            me.rankId = new RankClass();
             let DepartmentClass = me.$Vue.extend(DepartmentBase);
             me.departmentId = new DepartmentClass();
             
 
             let Promises = lists.map(async function (value) {
                 if(value == null) return
-                if (value.rankId && value.rankId.id){
-                    value.rankId = await me.rankId.getRealEntity(value.rankId.id);
-                }
                 if (value.departmentId && value.departmentId.id){
                     value.departmentId = await me.departmentId.getRealEntity(value.departmentId.id);
                 }

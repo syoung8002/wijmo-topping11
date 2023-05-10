@@ -29,10 +29,10 @@
             :initialized="flexInitialized"
             style="margin-top:10px; max-height:65vh;"
         >
-            <wj-flex-grid-filter :filterColumns="['userId','userName','rankId','departmentId',]" />
+            <wj-flex-grid-filter :filterColumns="['user','departmentId','rankId',]" />
             <wj-flex-grid-column binding="index" header="Number" width="2*" :isReadOnly="true" align="center" />
-            <wj-flex-grid-column binding="userId" header="userId" width="2*" :isReadOnly="true" align="center" />
-            <wj-flex-grid-column binding="userName" header="userName" width="2*" :isReadOnly="true" align="center" />
+            <wj-flex-grid-column binding="user" header="user" width="2*" :isReadOnly="true" align="center" />
+            <wj-flex-grid-column binding="rankId" header="rankId" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="rankId.name" header="rank" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="departmentId.name" header="department" width="2*" :isReadOnly="true" align="center" />
         </wj-flex-grid>

@@ -23,16 +23,13 @@
                                         <v-list-item-title>
                                         </v-list-item-title>
                                         <v-list-item-subtitle>
-                                            UserId :  {{item.userId }}
-                                        </v-list-item-subtitle>
-                                        <v-list-item-subtitle>
-                                            UserName :  {{item.userName }}
-                                        </v-list-item-subtitle>
-                                        <v-list-item-subtitle>
-                                            RankId :  {{item.rankId }}
+                                            User :  {{item.user }}
                                         </v-list-item-subtitle>
                                         <v-list-item-subtitle>
                                             DepartmentId :  {{item.departmentId }}
+                                        </v-list-item-subtitle>
+                                        <v-list-item-subtitle>
+                                            RankId :  {{item.rankId }}
                                         </v-list-item-subtitle>
                                     </v-list-item-content>
 
@@ -81,12 +78,10 @@
                 
                 
                 
-                
                 var id = me.value[idKey];
                 var tmpValue = await axios.get(axios.fixUrl('/employees/' + id))
                 if(tmpValue.data) {
                     var val = tmpValue.data
-                    
                     
                     
                     
@@ -104,7 +99,6 @@
                     
                     
                     
-                    
                     var id = this.value[idKey];
                     var path = '/employees/';
                     this.$router.push(path + id);
@@ -115,7 +109,6 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['id'] = arr[4]; 
-                    
                     
                     
                     

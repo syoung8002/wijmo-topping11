@@ -17,10 +17,9 @@
         </v-card-title >
 
         <v-card-text>
-            <String label="UserId" v-model="value.userId" :editMode="editMode"/>
-            <String label="UserName" v-model="value.userName" :editMode="editMode"/>
-            <RankId offline label="RankId" v-model="value.rankId" :editMode="editMode" @change="change"/>
+            <User offline label="User" v-model="value.user" :editMode="editMode" @change="change"/>
             <DepartmentId offline label="DepartmentId" v-model="value.departmentId" :editMode="editMode" @change="change"/>
+            <RankId offline label="RankId" v-model="value.rankId" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>
@@ -80,10 +79,12 @@
 <script>
     const axios = require('axios').default;
 
+    import User from './vo/User.vue';
 
     export default {
         name: 'Employee',
         components:{
+            User,
         },
         props: {
             value: [Object, String, Number, Boolean, Array],

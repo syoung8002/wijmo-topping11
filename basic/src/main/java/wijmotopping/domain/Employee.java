@@ -17,16 +17,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String userId;
-
-    private String userName;
-
     @Embedded
-    @AttributeOverride(
-        name = "id",
-        column = @Column(name = "rankId", nullable = true)
-    )
-    private RankId rankId;
+    private User user;
 
     @Embedded
     @AttributeOverride(
@@ -34,6 +26,13 @@ public class Employee {
         column = @Column(name = "departmentId", nullable = true)
     )
     private DepartmentId departmentId;
+
+    @Embedded
+    @AttributeOverride(
+        name = "id",
+        column = @Column(name = "rankId", nullable = true)
+    )
+    private RankId rankId;
 
     @PostPersist
     public void onPostPersist() {

@@ -5,14 +5,9 @@
         </v-card-title>
 
         <v-card-text>
-            <div>
-                <String label="UserId" v-model="item.userId" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="UserName" v-model="item.userName" :editMode="editMode" @change="change" />
-            </div>
-            <RankId offline label="RankId" v-model="item.rankId" :editMode="false" :key="false" @change="change" />
+            <User offline label="User" v-model="item.user" :editMode="false" @change="change" />
             <DepartmentId offline label="DepartmentId" v-model="item.departmentId" :editMode="false" :key="false" @change="change" />
+            <RankId offline label="RankId" v-model="item.rankId" :editMode="false" :key="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>
