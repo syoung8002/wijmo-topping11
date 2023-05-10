@@ -1,37 +1,33 @@
 <template>
-    <div class="container-fluid">
-        <v-btn @click="addNewRow">등록</v-btn>
-        <v-btn @click="editSelectedRow">수정</v-btn>
-        <v-btn @click="deleteSelectedRows">삭제</v-btn>
-        <RankViewQuery @search="search"></RankViewQuery>
-        <div class="row">
-            <!-- export to Excel -->
-            <div class="toolbar-item col-sm-3 col-md-2">
-                <excel-export-button :exportService="this.exportService" :getFlex="getFlex" />
-            </div>
-
-            <!-- export to PDF -->
-            <!-- <div class="toolbar-item col-sm-3 col-md-2">
-                <v-btn class="btn btn-default btn-block" @click="exportToPdf">Export To PDF</v-btn>
-            </div> -->
+    <div style="max-height:90vh;">
+        <div class="gs-bundle-of-buttons" style="max-height:10vh;">
+            <v-btn @click="addNewRow" small>
+                <v-icon small>mdi-plus-circle-outline</v-icon>등록
+            </v-btn>
+            <v-btn  @click="editSelectedRow" small>
+                <v-icon small>mdi-pencil</v-icon>수정
+            </v-btn>
+            <v-btn @click="deleteSelectedRows" small>
+                <v-icon small>mdi-minus-circle-outline</v-icon>삭제
+            </v-btn>
+            <excel-export-button :exportService="this.exportService" :getFlex="getFlex" />
         </div>
-
-        <!-- group panel -->
-        <wj-group-panel :placeholder="'Drag columns here to create groups'" :initialized="groupPanelInitialized" />
+        <RankViewQuery @search="search"></RankViewQuery>
 
         <!-- the grid -->
         <wj-flex-grid
             ref="flexGrid"
             :autoGenerateColumns="false"
-            :allowAddNew="true"
+            :allowAddNew="false"
             :allowDelete="true"
             :allowPinning="'SingleColumn'"
-            :newRowAtTop="true"
+            :newRowAtTop="false"
             :showMarquee="true"
             :selectionMode="'MultiRange'"
             :validateEdits="false"
             :itemsSource="values"
             :initialized="flexInitialized"
+            style="margin-top:10px; max-height:65vh;"
         >
             <wj-flex-grid-filter :filterColumns="['name',]" />
             <wj-flex-grid-column binding="index" header="Number" width="2*" :isReadOnly="true" align="center" />

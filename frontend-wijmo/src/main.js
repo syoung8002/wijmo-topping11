@@ -10,6 +10,7 @@ Vue.component("excel-export-button", ExcelExportButton);
 Vue.prototype.$Vue = Vue;
 
 const axios = require("axios").default;
+require('./style.css');
 
 // backend host url
 axios.backend = null; //"http://localhost:8088";

@@ -78,7 +78,7 @@
         </div>
 
         <v-main>
-            <v-container v-if="urlPath" class="py-8 px-6 mt-10" fluid>
+            <v-container v-if="urlPath" style="max-width:100vw !important;" class="py-8 px-6 mt-10" fluid>
                 <router-view></router-view>
             </v-container>
             <v-container v-else class="py-8 px-6 mt-10" fluid>

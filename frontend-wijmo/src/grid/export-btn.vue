@@ -1,7 +1,7 @@
 <template>
-    <button class="btn btn-default btn-block" :disabled="preparing" @click="exportToExcel">
-        <span v-if="!exporting">Export To Excel</span>
-    </button>
+    <v-btn class="btn btn-default btn-block" :disabled="preparing" @click="exportToExcel" small>
+        <v-icon v-if="!exporting" small>mdi-download</v-icon>엑셀
+    </v-btn>
 </template>
 
 <script>

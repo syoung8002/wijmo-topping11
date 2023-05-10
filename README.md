@@ -1,7 +1,7 @@
 # 
 
 ## Model
-www.msaez.io/#/storming/wijmotopping
+www.msaez.io/#/storming/test_wijmotopping
 
 ## Before Running Services
 ### Make sure there is a Kafka server running
