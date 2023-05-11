@@ -12,13 +12,10 @@
                     <v-list-item-content>
                         <v-list-item-title>Message {{idx+1}}</v-list-item-title>
                         <v-list-item-subtitle>
+                            Id :  {{item.id }} <br>
                             UserId :  {{item.userId }} <br>
                             Password :  {{item.password }} <br>
                             UserName :  {{item.userName }} <br>
-                            Email :  {{item.email }} <br>
-                            Address :  {{item.address }} <br>
-                            Phone :  {{item.phone }} <br>
-                            Long :  {{item.long }} <br>
                         </v-list-item-subtitle>
                     </v-list-item-content>
                     <v-list-item-action v-if="editMode">

@@ -31,18 +31,6 @@
             if(!('userName' in this.value)) {
                 this.value.userName = '';
             }
-            if(!('email' in this.value)) {
-                this.value.email = '';
-            }
-            if(!('address' in this.value)) {
-                this.value.address = '';
-            }
-            if(!('phone' in this.value)) {
-                this.value.phone = '';
-            }
-            if(!('long' in this.value)) {
-                this.value.long = 0;
-            }
         },
         watch: {
             

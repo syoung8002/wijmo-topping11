@@ -18,17 +18,9 @@ public class Employee {
     private Long id;
 
     @Embedded
-    @AttributeOverride(
-        name = "id",
-        column = @Column(name = "departmentId", nullable = true)
-    )
     private DepartmentId departmentId;
 
     @Embedded
-    @AttributeOverride(
-        name = "id",
-        column = @Column(name = "rankId", nullable = true)
-    )
     private RankId rankId;
 
     private EmployeeUser employeeUser;

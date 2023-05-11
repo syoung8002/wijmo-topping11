@@ -1,44 +1,20 @@
 package wijmotopping.domain;
 
-import javax.persistence.*;
-import org.springframework.beans.BeanUtils;
-import java.util.List;
-import lombok.Data;
 import java.util.Date;
-
+import java.util.List;
+import javax.persistence.*;
+import lombok.Data;
+import org.springframework.beans.BeanUtils;
 
 @Entity
 @Data
+public class EmployeeUser {
 
-public class EmployeeUser  {
+    private Long id;
 
-    
-    
-    
     private String userId;
-    
-    
-    
-    private String password;
-    
-    
-    
-    private String userName;
-    
-    
-    
-    private String email;
-    
-    
-    
-    private String address;
-    
-    
-    
-    private String phone;
-    
-    
-    
-    private Long long;
 
+    private String password;
+
+    private String userName;
 }
