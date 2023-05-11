@@ -2,7 +2,7 @@
 
     <v-data-table
             :headers="headers"
-            :items="user"
+            :items="employeeUser"
             :items-per-page="5"
             class="elevation-1"
     ></v-data-table>
@@ -12,7 +12,7 @@
 <script>
 
     export default {
-        name: 'UserList',
+        name: 'EmployeeUserList',
         props: {
             value: Object,
             editMode: Boolean,
@@ -49,7 +49,7 @@
                     value: "long" 
                 },
             ],
-            user : [],
+            employeeUser : [],
         }),
         async created() {
             if(!this.value) this.value = [];

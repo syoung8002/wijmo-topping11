@@ -4,7 +4,7 @@
             <v-list-group v-model="isExpansion">
                 <template v-slot:activator>
                     <v-list-item-content>
-                        <v-list-item-title>User</v-list-item-title>
+                        <v-list-item-title>EmployeeUser</v-list-item-title>
                     </v-list-item-content>
                 </template>
             
@@ -30,7 +30,7 @@
             </v-list-group>
         </v-list>
 
-        <User v-if="editMode && tick" offline :isNew="true" :inList="true"
+        <EmployeeUser v-if="editMode && tick" offline :isNew="true" :inList="true"
                 :editMode="editMode" v-model="newValue" @add="append">
             <template slot="actions">
                 <v-spacer></v-spacer>
@@ -60,17 +60,17 @@
                     Delete
                 </v-btn>
             </template>
-        </User>
+        </EmployeeUser>
     </div>
 </template>
 
 <script>
-    import User from '../vo/User.vue';
+    import EmployeeUser from '../vo/EmployeeUser.vue';
 
     export default {
-        name: 'UserManager',
+        name: 'EmployeeUserManager',
         components: {
-            User
+            EmployeeUser
         },
         props: {
             value: [Object, String, Number, Boolean, Array],

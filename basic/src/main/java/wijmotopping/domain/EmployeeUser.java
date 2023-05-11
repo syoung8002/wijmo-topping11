@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 @Data
 
-public class User  {
+public class EmployeeUser  {
 
     
     

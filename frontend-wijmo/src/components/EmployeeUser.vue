@@ -7,7 +7,7 @@
 
 
     export default {
-        name: 'User',
+        name: 'EmployeeUser',
         components:{
         },
         props: {

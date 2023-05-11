@@ -23,13 +23,13 @@
                                         <v-list-item-title>
                                         </v-list-item-title>
                                         <v-list-item-subtitle>
-                                            User :  {{item.user }}
-                                        </v-list-item-subtitle>
-                                        <v-list-item-subtitle>
                                             DepartmentId :  {{item.departmentId }}
                                         </v-list-item-subtitle>
                                         <v-list-item-subtitle>
                                             RankId :  {{item.rankId }}
+                                        </v-list-item-subtitle>
+                                        <v-list-item-subtitle>
+                                            EmployeeUser :  {{item.employeeUser }}
                                         </v-list-item-subtitle>
                                     </v-list-item-content>
 

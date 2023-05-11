@@ -32,7 +32,7 @@ mvn spring-boot:run
 ## Test by API
 - basic
 ```
- http :8088/employees id="id" user="user" departmentId="departmentId" rankId="rankId" 
+ http :8088/employees id="id" departmentId="departmentId" rankId="rankId" employeeUser="employeeUser" 
  http :8088/ranks id="id" name="name" 
  http :8088/departments id="id" name="name" 
 ```
