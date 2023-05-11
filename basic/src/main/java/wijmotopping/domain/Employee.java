@@ -17,7 +17,6 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Embedded
     private User user;
 
     @Embedded

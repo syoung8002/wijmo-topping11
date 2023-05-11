@@ -18,6 +18,7 @@
                             Email :  {{item.email }} <br>
                             Address :  {{item.address }} <br>
                             Phone :  {{item.phone }} <br>
+                            Long :  {{item.long }} <br>
                         </v-list-item-subtitle>
                     </v-list-item-content>
                     <v-list-item-action v-if="editMode">
@@ -64,7 +65,7 @@
 </template>
 
 <script>
-    import User from '../User.vue';
+    import User from '../vo/User.vue';
 
     export default {
         name: 'UserManager',
@@ -84,6 +85,10 @@
         async created() {
             if (!this.value) {
                 this.value = [];
+            }
+
+            if(this.editMode){
+                this.isExpansion = true
             }
         },
         methods: {

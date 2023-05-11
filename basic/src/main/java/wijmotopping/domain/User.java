@@ -1,26 +1,44 @@
 package wijmotopping.domain;
 
-import java.util.Date;
-import java.util.List;
 import javax.persistence.*;
-import lombok.*;
 import org.springframework.beans.BeanUtils;
+import java.util.List;
+import lombok.Data;
+import java.util.Date;
 
-@Embeddable
+
+@Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class User {
 
+public class User  {
+
+    
+    
+    
     private String userId;
-
+    
+    
+    
     private String password;
-
+    
+    
+    
     private String userName;
-
+    
+    
+    
     private String email;
-
+    
+    
+    
     private String address;
-
+    
+    
+    
     private String phone;
+    
+    
+    
+    private Long long;
+
 }

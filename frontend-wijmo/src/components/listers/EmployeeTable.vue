@@ -87,7 +87,7 @@
             this.values = temp.data._embedded.employees;
 
             this.newValue = {
-                'user': {},
+                'user': '',
                 'departmentId': {},
                 'rankId': {},
             }

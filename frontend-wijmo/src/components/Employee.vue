@@ -78,6 +78,7 @@
 <script>
 import EmployeeBase from '../components/EmployeeBase.vue'
 import DepartmentBase from '../components/DepartmentBase.vue'
+import RankBase from '../components/RankBase.vue'
 
 const axios = require('axios').default;
 
@@ -185,12 +186,17 @@ export default {
             let lists = await me.search();
             let DepartmentClass = me.$Vue.extend(DepartmentBase);
             me.departmentId = new DepartmentClass();
+            let RankClass = me.$Vue.extend(RankBase);
+            me.rankId = new RankClass();
             
 
             let Promises = lists.map(async function (value) {
                 if(value == null) return
                 if (value.departmentId && value.departmentId.id){
                     value.departmentId = await me.departmentId.getRealEntity(value.departmentId.id);
+                }
+                if (value.rankId && value.rankId.id){
+                    value.rankId = await me.rankId.getRealEntity(value.rankId.id);
                 }
             });
             await Promise.all(Promises);
